@@ -1,11 +1,17 @@
 # Erlang
 .eunit/*
-deps/*
+_build/
 priv/*
 *.o
 ebin/*.beam
 ebin/riak_pb.app
 include/*_pb.hrl
+src/riak_dt_pb.erl
+src/riak_kv_pb.erl
+src/riak_pb.erl
+src/riak_search_pb.erl
+src/riak_ts_pb.erl
+src/riak_yokozuna_pb.erl
 doc/*
 .qc
 .eqc-info

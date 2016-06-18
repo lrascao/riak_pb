@@ -1,8 +1,7 @@
-.PHONY: deps
+REBAR3 = $(CURDIR)/rebar3
 
-all: deps compile_all
+all: compile_all
 
-deps: erl_deps
 
 compile_all: erl_compile
 
@@ -15,16 +14,18 @@ distclean: clean
 DIALYZER_APPS = kernel stdlib erts crypto compiler hipe syntax_tools
 include tools.mk
 
-erl_deps:
-	@${REBAR} get-deps
-
 erl_compile:
-	@${REBAR} compile
+	@${REBAR3} compile
+
+erl_test:
+	@${REBAR3} eunit
 
 erl_clean:
-	@${REBAR} clean
+	@${REBAR3} clean
 
 compile: erl_compile # Hack for tools.mk
+
+test: erl_test # Hack for tools.mk
 
 # C specific build steps
 PROTOC	 = protoc-c

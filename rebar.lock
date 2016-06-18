@@ -1,0 +1,4 @@
+[{<<"hamcrest">>,
+  {git,"https://github.com/basho/hamcrest-erlang.git",
+       {ref,"908a24fda4a46776a5135db60ca071e3d783f9f6"}},
+  0}].
